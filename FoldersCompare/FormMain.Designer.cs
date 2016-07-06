@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.listViewDireita = new System.Windows.Forms.ListView();
             this.listViewEsquerda = new System.Windows.Forms.ListView();
@@ -217,6 +218,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
