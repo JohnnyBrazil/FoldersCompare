@@ -48,6 +48,8 @@
             this.txtPathEsquerda = new System.Windows.Forms.TextBox();
             this.btnEsquerda = new System.Windows.Forms.Button();
             this.btnDireita = new System.Windows.Forms.Button();
+            this.btnListarPelaEsquerda = new System.Windows.Forms.Button();
+            this.btnListarPelaDireita = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -104,6 +106,8 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.btnListarPelaDireita);
+            this.panel1.Controls.Add(this.btnListarPelaEsquerda);
             this.panel1.Controls.Add(this.pnDireita);
             this.panel1.Controls.Add(this.pnEsquerda);
             this.panel1.Controls.Add(this.btnCompareDireitaEsquerda);
@@ -258,6 +262,26 @@
             this.btnDireita.UseVisualStyleBackColor = true;
             this.btnDireita.Click += new System.EventHandler(this.btnDireita_Click);
             // 
+            // btnListarPelaEsquerda
+            // 
+            this.btnListarPelaEsquerda.Location = new System.Drawing.Point(431, 24);
+            this.btnListarPelaEsquerda.Name = "btnListarPelaEsquerda";
+            this.btnListarPelaEsquerda.Size = new System.Drawing.Size(96, 23);
+            this.btnListarPelaEsquerda.TabIndex = 34;
+            this.btnListarPelaEsquerda.Text = "Listar arquivos";
+            this.btnListarPelaEsquerda.UseVisualStyleBackColor = true;
+            this.btnListarPelaEsquerda.Click += new System.EventHandler(this.btnListarPelaEsquerda_Click);
+            // 
+            // btnListarPelaDireita
+            // 
+            this.btnListarPelaDireita.Location = new System.Drawing.Point(848, 24);
+            this.btnListarPelaDireita.Name = "btnListarPelaDireita";
+            this.btnListarPelaDireita.Size = new System.Drawing.Size(96, 23);
+            this.btnListarPelaDireita.TabIndex = 35;
+            this.btnListarPelaDireita.Text = "Listar arquivos";
+            this.btnListarPelaDireita.UseVisualStyleBackColor = true;
+            this.btnListarPelaDireita.Click += new System.EventHandler(this.btnListarPelaDireita_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +331,8 @@
         private System.Windows.Forms.Label lblTamanhoDiretorioEsquerda;
         private System.Windows.Forms.Panel pnEsquerda;
         private System.Windows.Forms.Panel pnDireita;
+        private System.Windows.Forms.Button btnListarPelaDireita;
+        private System.Windows.Forms.Button btnListarPelaEsquerda;
     }
 }
 

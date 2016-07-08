@@ -16,6 +16,7 @@ namespace FoldersCompare
     {
         int countArquivosFaltantesDireita = 0;
         int countArquivosFaltantesEsquerda = 0;
+        List<string> diferentFiles = new List<string>();
 
         public frmMain()
         {
@@ -32,6 +33,8 @@ namespace FoldersCompare
             lblArquivosFaltantesDireitaEsquerda.Text = "";
             pnEsquerda.Visible = false;
             pnDireita.Visible = false;
+            btnListarPelaDireita.Visible = false;
+            btnListarPelaEsquerda.Visible = false;
         }
 
         /// <summary>
@@ -84,6 +87,8 @@ namespace FoldersCompare
             countArquivosFaltantesEsquerda = 0;
             pnEsquerda.Visible = false;
             pnDireita.Visible = false;
+            btnListarPelaDireita.Visible = false;
+            btnListarPelaEsquerda.Visible = false;
 
             CompareEsquerdaDireita(txtPathEsquerda.Text, txtPathDireira.Text);
         }
@@ -102,6 +107,8 @@ namespace FoldersCompare
             countArquivosFaltantesEsquerda = 0;
             pnEsquerda.Visible = false;
             pnDireita.Visible = false;
+            btnListarPelaDireita.Visible = false;
+            btnListarPelaEsquerda.Visible = false;
 
             CompareDireitaEsquerda(txtPathEsquerda.Text, txtPathDireira.Text);
         }
@@ -131,6 +138,29 @@ namespace FoldersCompare
             if (e.Control && e.KeyCode == Keys.C)
                 CopySelectedValuesToClipboardDireita();
         }
+
+        /// <summary>
+        /// Evento botão listar arquivos diferentes pela esquerda
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnListarPelaEsquerda_Click(object sender, EventArgs e)
+        {
+            frmListaFilesDirent frmFilesDiferents = new frmListaFilesDirent(diferentFiles);
+            frmFilesDiferents.ShowDialog();
+        }
+
+        /// <summary>
+        /// Evento botão listar arquivos diferentes pela direita
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnListarPelaDireita_Click(object sender, EventArgs e)
+        {
+            frmListaFilesDirent frmFilesDiferents = new frmListaFilesDirent(diferentFiles);
+            frmFilesDiferents.ShowDialog();
+        }
+
 
         #endregion
 
@@ -275,6 +305,7 @@ namespace FoldersCompare
                 if (!contem)
                 {
                     listViewEsquerda.Items[i].BackColor = Color.GreenYellow;
+                    diferentFiles.Add(listViewEsquerda.Items[i].Text);
                     countArquivosFaltantesDireita ++;
                 }
             }
@@ -283,7 +314,8 @@ namespace FoldersCompare
 
             //apresenta os paineis com resultados
             pnEsquerda.Visible = true;
-            pnDireita.Visible = true;
+            pnDireita.Visible = true;            
+            btnListarPelaEsquerda.Visible = true;
         }
 
         /// <summary>
@@ -322,6 +354,7 @@ namespace FoldersCompare
                 {
                     listViewDireita.Items[i].BackColor = Color.GreenYellow;
                     countArquivosFaltantesEsquerda++;
+                    diferentFiles.Add(listViewDireita.Items[i].Text);
                 }
             }
 
@@ -330,6 +363,7 @@ namespace FoldersCompare
             //apresenta os paineis com resultados
             pnEsquerda.Visible = true;
             pnDireita.Visible = true;
+            btnListarPelaDireita.Visible = true;            
         }
         
         /// <summary>
@@ -378,8 +412,10 @@ namespace FoldersCompare
 
 
 
+
+
         #endregion
 
-        
+       
     }
 }
