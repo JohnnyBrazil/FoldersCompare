@@ -89,6 +89,7 @@ namespace FoldersCompare
             pnDireita.Visible = false;
             btnListarPelaDireita.Visible = false;
             btnListarPelaEsquerda.Visible = false;
+            diferentFiles.Clear();
 
             CompareEsquerdaDireita(txtPathEsquerda.Text, txtPathDireira.Text);
         }
@@ -109,6 +110,7 @@ namespace FoldersCompare
             pnDireita.Visible = false;
             btnListarPelaDireita.Visible = false;
             btnListarPelaEsquerda.Visible = false;
+            diferentFiles.Clear();
 
             CompareDireitaEsquerda(txtPathEsquerda.Text, txtPathDireira.Text);
         }
