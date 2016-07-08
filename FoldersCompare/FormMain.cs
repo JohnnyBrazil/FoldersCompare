@@ -106,6 +106,31 @@ namespace FoldersCompare
             CompareDireitaEsquerda(txtPathEsquerda.Text, txtPathDireira.Text);
         }
 
+        /// <summary>
+        /// Evento tecla pressionada no listview esquerda
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listViewEsquerda_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (sender != listViewEsquerda) return;
+
+            if (e.Control && e.KeyCode == Keys.C)
+                CopySelectedValuesToClipboardEsquerda();
+        }
+
+        /// <summary>
+        /// Evento tecla pressionada no listview direita
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listViewDireita_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (sender != listViewDireita) return;
+
+            if (e.Control && e.KeyCode == Keys.C)
+                CopySelectedValuesToClipboardDireita();
+        }
 
         #endregion
 
@@ -327,8 +352,34 @@ namespace FoldersCompare
             return (bytes / 1024f) / 1024f;
         }
 
+        /// <summary>
+        /// Método copia do listview esquerda para o ClipBoard
+        /// </summary>
+        private void CopySelectedValuesToClipboardEsquerda()
+        {
+            var builder = new StringBuilder();
+            foreach (ListViewItem item in listViewEsquerda.SelectedItems)
+                builder.AppendLine(item.Text);
+
+            Clipboard.SetText(builder.ToString());
+        }
+
+        /// <summary>
+        /// Método copia do listview direita para o ClipBoard
+        /// </summary>
+        private void CopySelectedValuesToClipboardDireita()
+        {
+            var builder = new StringBuilder();
+            foreach (ListViewItem item in listViewDireita.SelectedItems)
+                builder.AppendLine(item.Text);
+
+            Clipboard.SetText(builder.ToString());
+        }
+
+
+
         #endregion
 
-       
+        
     }
 }

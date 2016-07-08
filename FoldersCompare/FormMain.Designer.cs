@@ -34,27 +34,27 @@
             this.listViewEsquerda = new System.Windows.Forms.ListView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblArquivosFaltantesDireitaEsquerda = new System.Windows.Forms.Label();
-            this.lblArquivosFaltantesEsquerdaDireita = new System.Windows.Forms.Label();
-            this.btnCompareDireitaEsquerda = new System.Windows.Forms.Button();
+            this.pnDireita = new System.Windows.Forms.Panel();
             this.lblQuantidadeItensDireita = new System.Windows.Forms.Label();
+            this.lblTamanhoDiretorioDireita = new System.Windows.Forms.Label();
+            this.lblArquivosFaltantesDireitaEsquerda = new System.Windows.Forms.Label();
+            this.pnEsquerda = new System.Windows.Forms.Panel();
+            this.lblArquivosFaltantesEsquerdaDireita = new System.Windows.Forms.Label();
+            this.lblTamanhoDiretorioEsquerda = new System.Windows.Forms.Label();
             this.lblQuantidadeItensEsquerda = new System.Windows.Forms.Label();
+            this.btnCompareDireitaEsquerda = new System.Windows.Forms.Button();
             this.btnCompareEsquerdaDireita = new System.Windows.Forms.Button();
             this.txtPathDireira = new System.Windows.Forms.TextBox();
             this.txtPathEsquerda = new System.Windows.Forms.TextBox();
             this.btnEsquerda = new System.Windows.Forms.Button();
             this.btnDireita = new System.Windows.Forms.Button();
-            this.lblTamanhoDiretorioEsquerda = new System.Windows.Forms.Label();
-            this.lblTamanhoDiretorioDireita = new System.Windows.Forms.Label();
-            this.pnEsquerda = new System.Windows.Forms.Panel();
-            this.pnDireita = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnEsquerda.SuspendLayout();
             this.pnDireita.SuspendLayout();
+            this.pnEsquerda.SuspendLayout();
             this.SuspendLayout();
             // 
             // listViewDireita
@@ -67,6 +67,7 @@
             this.listViewDireita.TabIndex = 0;
             this.listViewDireita.UseCompatibleStateImageBehavior = false;
             this.listViewDireita.View = System.Windows.Forms.View.List;
+            this.listViewDireita.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listViewDireita_KeyUp);
             // 
             // listViewEsquerda
             // 
@@ -79,6 +80,7 @@
             this.listViewEsquerda.TabIndex = 0;
             this.listViewEsquerda.UseCompatibleStateImageBehavior = false;
             this.listViewEsquerda.View = System.Windows.Forms.View.List;
+            this.listViewEsquerda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listViewEsquerda_KeyUp);
             // 
             // splitContainer1
             // 
@@ -116,33 +118,17 @@
             this.panel1.Size = new System.Drawing.Size(1377, 75);
             this.panel1.TabIndex = 8;
             // 
-            // lblArquivosFaltantesDireitaEsquerda
+            // pnDireita
             // 
-            this.lblArquivosFaltantesDireitaEsquerda.AutoSize = true;
-            this.lblArquivosFaltantesDireitaEsquerda.Location = new System.Drawing.Point(3, 25);
-            this.lblArquivosFaltantesDireitaEsquerda.Name = "lblArquivosFaltantesDireitaEsquerda";
-            this.lblArquivosFaltantesDireitaEsquerda.Size = new System.Drawing.Size(89, 13);
-            this.lblArquivosFaltantesDireitaEsquerda.TabIndex = 29;
-            this.lblArquivosFaltantesDireitaEsquerda.Text = "Arquivos listados.";
-            // 
-            // lblArquivosFaltantesEsquerdaDireita
-            // 
-            this.lblArquivosFaltantesEsquerdaDireita.AutoSize = true;
-            this.lblArquivosFaltantesEsquerdaDireita.Location = new System.Drawing.Point(3, 25);
-            this.lblArquivosFaltantesEsquerdaDireita.Name = "lblArquivosFaltantesEsquerdaDireita";
-            this.lblArquivosFaltantesEsquerdaDireita.Size = new System.Drawing.Size(89, 13);
-            this.lblArquivosFaltantesEsquerdaDireita.TabIndex = 28;
-            this.lblArquivosFaltantesEsquerdaDireita.Text = "Arquivos listados.";
-            // 
-            // btnCompareDireitaEsquerda
-            // 
-            this.btnCompareDireitaEsquerda.Location = new System.Drawing.Point(685, 25);
-            this.btnCompareDireitaEsquerda.Name = "btnCompareDireitaEsquerda";
-            this.btnCompareDireitaEsquerda.Size = new System.Drawing.Size(98, 25);
-            this.btnCompareDireitaEsquerda.TabIndex = 27;
-            this.btnCompareDireitaEsquerda.Text = "<--  Compare ";
-            this.btnCompareDireitaEsquerda.UseVisualStyleBackColor = true;
-            this.btnCompareDireitaEsquerda.Click += new System.EventHandler(this.btnCompareDireitaEsquerda_Click);
+            this.pnDireita.BackColor = System.Drawing.Color.LemonChiffon;
+            this.pnDireita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnDireita.Controls.Add(this.lblQuantidadeItensDireita);
+            this.pnDireita.Controls.Add(this.lblTamanhoDiretorioDireita);
+            this.pnDireita.Controls.Add(this.lblArquivosFaltantesDireitaEsquerda);
+            this.pnDireita.Location = new System.Drawing.Point(946, 6);
+            this.pnDireita.Name = "pnDireita";
+            this.pnDireita.Size = new System.Drawing.Size(425, 40);
+            this.pnDireita.TabIndex = 33;
             // 
             // lblQuantidadeItensDireita
             // 
@@ -153,6 +139,54 @@
             this.lblQuantidadeItensDireita.TabIndex = 26;
             this.lblQuantidadeItensDireita.Text = "Arquivos listados.";
             // 
+            // lblTamanhoDiretorioDireita
+            // 
+            this.lblTamanhoDiretorioDireita.AutoSize = true;
+            this.lblTamanhoDiretorioDireita.Location = new System.Drawing.Point(274, 4);
+            this.lblTamanhoDiretorioDireita.Name = "lblTamanhoDiretorioDireita";
+            this.lblTamanhoDiretorioDireita.Size = new System.Drawing.Size(95, 13);
+            this.lblTamanhoDiretorioDireita.TabIndex = 31;
+            this.lblTamanhoDiretorioDireita.Text = "Tamanho diretório:";
+            // 
+            // lblArquivosFaltantesDireitaEsquerda
+            // 
+            this.lblArquivosFaltantesDireitaEsquerda.AutoSize = true;
+            this.lblArquivosFaltantesDireitaEsquerda.Location = new System.Drawing.Point(3, 25);
+            this.lblArquivosFaltantesDireitaEsquerda.Name = "lblArquivosFaltantesDireitaEsquerda";
+            this.lblArquivosFaltantesDireitaEsquerda.Size = new System.Drawing.Size(89, 13);
+            this.lblArquivosFaltantesDireitaEsquerda.TabIndex = 29;
+            this.lblArquivosFaltantesDireitaEsquerda.Text = "Arquivos listados.";
+            // 
+            // pnEsquerda
+            // 
+            this.pnEsquerda.BackColor = System.Drawing.Color.LemonChiffon;
+            this.pnEsquerda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnEsquerda.Controls.Add(this.lblArquivosFaltantesEsquerdaDireita);
+            this.pnEsquerda.Controls.Add(this.lblTamanhoDiretorioEsquerda);
+            this.pnEsquerda.Controls.Add(this.lblQuantidadeItensEsquerda);
+            this.pnEsquerda.Location = new System.Drawing.Point(5, 6);
+            this.pnEsquerda.Name = "pnEsquerda";
+            this.pnEsquerda.Size = new System.Drawing.Size(425, 40);
+            this.pnEsquerda.TabIndex = 32;
+            // 
+            // lblArquivosFaltantesEsquerdaDireita
+            // 
+            this.lblArquivosFaltantesEsquerdaDireita.AutoSize = true;
+            this.lblArquivosFaltantesEsquerdaDireita.Location = new System.Drawing.Point(3, 25);
+            this.lblArquivosFaltantesEsquerdaDireita.Name = "lblArquivosFaltantesEsquerdaDireita";
+            this.lblArquivosFaltantesEsquerdaDireita.Size = new System.Drawing.Size(89, 13);
+            this.lblArquivosFaltantesEsquerdaDireita.TabIndex = 28;
+            this.lblArquivosFaltantesEsquerdaDireita.Text = "Arquivos listados.";
+            // 
+            // lblTamanhoDiretorioEsquerda
+            // 
+            this.lblTamanhoDiretorioEsquerda.AutoSize = true;
+            this.lblTamanhoDiretorioEsquerda.Location = new System.Drawing.Point(266, 4);
+            this.lblTamanhoDiretorioEsquerda.Name = "lblTamanhoDiretorioEsquerda";
+            this.lblTamanhoDiretorioEsquerda.Size = new System.Drawing.Size(95, 13);
+            this.lblTamanhoDiretorioEsquerda.TabIndex = 30;
+            this.lblTamanhoDiretorioEsquerda.Text = "Tamanho diretório:";
+            // 
             // lblQuantidadeItensEsquerda
             // 
             this.lblQuantidadeItensEsquerda.AutoSize = true;
@@ -161,6 +195,16 @@
             this.lblQuantidadeItensEsquerda.Size = new System.Drawing.Size(89, 13);
             this.lblQuantidadeItensEsquerda.TabIndex = 25;
             this.lblQuantidadeItensEsquerda.Text = "Arquivos listados.";
+            // 
+            // btnCompareDireitaEsquerda
+            // 
+            this.btnCompareDireitaEsquerda.Location = new System.Drawing.Point(685, 25);
+            this.btnCompareDireitaEsquerda.Name = "btnCompareDireitaEsquerda";
+            this.btnCompareDireitaEsquerda.Size = new System.Drawing.Size(98, 25);
+            this.btnCompareDireitaEsquerda.TabIndex = 27;
+            this.btnCompareDireitaEsquerda.Text = "<--  Compare ";
+            this.btnCompareDireitaEsquerda.UseVisualStyleBackColor = true;
+            this.btnCompareDireitaEsquerda.Click += new System.EventHandler(this.btnCompareDireitaEsquerda_Click);
             // 
             // btnCompareEsquerdaDireita
             // 
@@ -214,48 +258,6 @@
             this.btnDireita.UseVisualStyleBackColor = true;
             this.btnDireita.Click += new System.EventHandler(this.btnDireita_Click);
             // 
-            // lblTamanhoDiretorioEsquerda
-            // 
-            this.lblTamanhoDiretorioEsquerda.AutoSize = true;
-            this.lblTamanhoDiretorioEsquerda.Location = new System.Drawing.Point(266, 4);
-            this.lblTamanhoDiretorioEsquerda.Name = "lblTamanhoDiretorioEsquerda";
-            this.lblTamanhoDiretorioEsquerda.Size = new System.Drawing.Size(95, 13);
-            this.lblTamanhoDiretorioEsquerda.TabIndex = 30;
-            this.lblTamanhoDiretorioEsquerda.Text = "Tamanho diretório:";
-            // 
-            // lblTamanhoDiretorioDireita
-            // 
-            this.lblTamanhoDiretorioDireita.AutoSize = true;
-            this.lblTamanhoDiretorioDireita.Location = new System.Drawing.Point(274, 4);
-            this.lblTamanhoDiretorioDireita.Name = "lblTamanhoDiretorioDireita";
-            this.lblTamanhoDiretorioDireita.Size = new System.Drawing.Size(95, 13);
-            this.lblTamanhoDiretorioDireita.TabIndex = 31;
-            this.lblTamanhoDiretorioDireita.Text = "Tamanho diretório:";
-            // 
-            // pnEsquerda
-            // 
-            this.pnEsquerda.BackColor = System.Drawing.Color.LemonChiffon;
-            this.pnEsquerda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnEsquerda.Controls.Add(this.lblArquivosFaltantesEsquerdaDireita);
-            this.pnEsquerda.Controls.Add(this.lblTamanhoDiretorioEsquerda);
-            this.pnEsquerda.Controls.Add(this.lblQuantidadeItensEsquerda);
-            this.pnEsquerda.Location = new System.Drawing.Point(5, 6);
-            this.pnEsquerda.Name = "pnEsquerda";
-            this.pnEsquerda.Size = new System.Drawing.Size(425, 40);
-            this.pnEsquerda.TabIndex = 32;
-            // 
-            // pnDireita
-            // 
-            this.pnDireita.BackColor = System.Drawing.Color.LemonChiffon;
-            this.pnDireita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnDireita.Controls.Add(this.lblQuantidadeItensDireita);
-            this.pnDireita.Controls.Add(this.lblTamanhoDiretorioDireita);
-            this.pnDireita.Controls.Add(this.lblArquivosFaltantesDireitaEsquerda);
-            this.pnDireita.Location = new System.Drawing.Point(946, 6);
-            this.pnDireita.Name = "pnDireita";
-            this.pnDireita.Size = new System.Drawing.Size(425, 40);
-            this.pnDireita.TabIndex = 33;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,10 +278,10 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnEsquerda.ResumeLayout(false);
-            this.pnEsquerda.PerformLayout();
             this.pnDireita.ResumeLayout(false);
             this.pnDireita.PerformLayout();
+            this.pnEsquerda.ResumeLayout(false);
+            this.pnEsquerda.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
