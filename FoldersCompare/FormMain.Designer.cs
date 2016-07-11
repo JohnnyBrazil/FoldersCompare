@@ -34,6 +34,8 @@
             this.listViewEsquerda = new System.Windows.Forms.ListView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnListarPelaDireita = new System.Windows.Forms.Button();
+            this.btnListarPelaEsquerda = new System.Windows.Forms.Button();
             this.pnDireita = new System.Windows.Forms.Panel();
             this.lblQuantidadeItensDireita = new System.Windows.Forms.Label();
             this.lblTamanhoDiretorioDireita = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.txtPathEsquerda = new System.Windows.Forms.TextBox();
             this.btnEsquerda = new System.Windows.Forms.Button();
             this.btnDireita = new System.Windows.Forms.Button();
-            this.btnListarPelaEsquerda = new System.Windows.Forms.Button();
-            this.btnListarPelaDireita = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -121,6 +121,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1377, 75);
             this.panel1.TabIndex = 8;
+            // 
+            // btnListarPelaDireita
+            // 
+            this.btnListarPelaDireita.Location = new System.Drawing.Point(837, 24);
+            this.btnListarPelaDireita.Name = "btnListarPelaDireita";
+            this.btnListarPelaDireita.Size = new System.Drawing.Size(107, 23);
+            this.btnListarPelaDireita.TabIndex = 35;
+            this.btnListarPelaDireita.Text = "Exportar arquivos";
+            this.btnListarPelaDireita.UseVisualStyleBackColor = true;
+            this.btnListarPelaDireita.Click += new System.EventHandler(this.btnListarPelaDireita_Click);
+            // 
+            // btnListarPelaEsquerda
+            // 
+            this.btnListarPelaEsquerda.Location = new System.Drawing.Point(431, 24);
+            this.btnListarPelaEsquerda.Name = "btnListarPelaEsquerda";
+            this.btnListarPelaEsquerda.Size = new System.Drawing.Size(110, 23);
+            this.btnListarPelaEsquerda.TabIndex = 34;
+            this.btnListarPelaEsquerda.Text = "Exportar arquivos";
+            this.btnListarPelaEsquerda.UseVisualStyleBackColor = true;
+            this.btnListarPelaEsquerda.Click += new System.EventHandler(this.btnListarPelaEsquerda_Click);
             // 
             // pnDireita
             // 
@@ -261,26 +281,6 @@
             this.btnDireita.Text = "...";
             this.btnDireita.UseVisualStyleBackColor = true;
             this.btnDireita.Click += new System.EventHandler(this.btnDireita_Click);
-            // 
-            // btnListarPelaEsquerda
-            // 
-            this.btnListarPelaEsquerda.Location = new System.Drawing.Point(431, 24);
-            this.btnListarPelaEsquerda.Name = "btnListarPelaEsquerda";
-            this.btnListarPelaEsquerda.Size = new System.Drawing.Size(96, 23);
-            this.btnListarPelaEsquerda.TabIndex = 34;
-            this.btnListarPelaEsquerda.Text = "Listar arquivos";
-            this.btnListarPelaEsquerda.UseVisualStyleBackColor = true;
-            this.btnListarPelaEsquerda.Click += new System.EventHandler(this.btnListarPelaEsquerda_Click);
-            // 
-            // btnListarPelaDireita
-            // 
-            this.btnListarPelaDireita.Location = new System.Drawing.Point(848, 24);
-            this.btnListarPelaDireita.Name = "btnListarPelaDireita";
-            this.btnListarPelaDireita.Size = new System.Drawing.Size(96, 23);
-            this.btnListarPelaDireita.TabIndex = 35;
-            this.btnListarPelaDireita.Text = "Listar arquivos";
-            this.btnListarPelaDireita.UseVisualStyleBackColor = true;
-            this.btnListarPelaDireita.Click += new System.EventHandler(this.btnListarPelaDireita_Click);
             // 
             // frmMain
             // 
