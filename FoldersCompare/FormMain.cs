@@ -163,6 +163,39 @@ namespace FoldersCompare
             frmFilesDiferents.ShowDialog();
         }
 
+        /// <summary>
+        /// Evento botão abrir localizacao do lado esquerdo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAbrirLocalizacaoEsquerda_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(txtPathEsquerda.Text))
+            {
+                Process.Start(txtPathEsquerda.Text);
+            }
+            else
+            {
+                MessageBox.Show("O diretório não encontrado!");
+            }
+        }
+
+        /// <summary>
+        /// Evento botão abrir localizacao do lado direito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAbrirLocalizacaoDireita_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(txtPathDireira.Text))
+            {
+                Process.Start(txtPathDireira.Text);
+            }
+            else
+            {
+                MessageBox.Show("O diretório não encontrado!");
+            }
+        }
 
         #endregion
 
@@ -416,8 +449,8 @@ namespace FoldersCompare
 
 
 
+
         #endregion
 
-       
     }
 }
